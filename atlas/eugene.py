@@ -67,7 +67,9 @@ def str_as_int(string):
 
 def format_percent(f: float, smart=False, ndigits=None) -> str:
     if smart:
-        if f < 0.0001:
+        if f == 0.0:
+            pass
+        elif f < 0.0001:
             ndigits = 3
         elif f < 0.001:
             ndigits = 2
