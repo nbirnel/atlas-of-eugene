@@ -1,5 +1,8 @@
+black
+folium
 geopandas
 geoplot
 jupyter
+jupyter_black
+jupyterlab_rise
 nbconvert[webpdf]
-jupyterlabs_rise
