@@ -135,4 +135,30 @@ private = {
         "WEBER PROPERTIES LMT PTRSHP",
         "WRIGHT-WEBER RICA & WEBER JOSEPH ARNOLD",
     ],
+    'SYRIOS TRUST': [
+        'SYRIOS WILLIAM L',
+        'SYRIOS WILLIAM L & TERESA S',
+        'WHITELY GREGORY T',
+        'STEWARDSHIP PROPERTIES',
+        'SYRIOS TRUST',
+    ],
+    'CARL A PETERSEN': [
+        'CARL A PETERSEN',
+        'CARL A PETERSEN LLC',
+        'NORTHWEST RENTAL',
+        'PETERSEN CARL A',
+    ],
+    'smith sherry l te': [
+        'smith sherry l te',
+        'smith steven j te',
+    ],
+    'st vincent de paul': [
+        'st vincent de paul',
+        'st vincent de paul of lane co oregon',
+        'st vincent de paul of lane county',
+        'st vincent de paul of lane county inc',
+        'st vincent de paul society',
+        'of lane county inc',
+        'society of lane co',
+    ],
 }

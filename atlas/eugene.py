@@ -85,6 +85,10 @@ def format_dollars(dollars):
     return f"${round(dollars):,}"
 
 
+def format_millions(dollars):
+    return f"${round(dollars/10**6):,}M"
+
+
 def add_display_columns(df, ratios=True):
 
     df["assessed_value_100k"] = df["assessed_value"] / 10**5
@@ -152,9 +156,9 @@ def modify_aggregate_columns(df, asint=("Year Built",)):
 def get_wards():
     gdf = gpd.read_file("data/city-of-eugene/Eugene_Wards_-_HUB.geojson")
     gdf.geometry = gdf.geometry.apply(make_valid)
-    gdf["ward_number"] = gdf.ward_number.astype("category")
+    gdf["ward_number"] = gdf.ward_number.astype('category')
     return gdf.rename(
-        columns={"ward_number": "Ward Number", "councilor": "Councilor"}
+        columns={"councilor": "Councilor"}
     )
 
 
@@ -774,11 +778,11 @@ def get_single_family_housing_gdf(regenerate=False):
 
     gdf["Decade Built"] = (gdf["Year Built"] // 10 * 10).astype(str)
 
-    gdf["Owner Occupied"] = gdf.situs_address.str.slice(
+    gdf["Tenancy"] = gdf.situs_address.str.slice(
         stop=8
     ) == gdf.mailing_address_1.str.slice(stop=8)
-    gdf["Owner Occupied"] = (
-        gdf["Owner Occupied"]
+    gdf["Tenancy"] = (
+        gdf["Tenancy"]
         .map(lambda x: {False: "Rented", True: "Owner Occupied"}.get(x))
         .astype("category")
     )
