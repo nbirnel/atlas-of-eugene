@@ -53,6 +53,9 @@ mfh_types = [
 acres_per_sq_meter = 0.000247105
 
 
+def single_median(series):
+    return series.mode().loc[0]
+
 def str_as_float(string):
     if string == "":
         return float(0)
@@ -81,11 +84,15 @@ def format_percent(f: float, smart=False, ndigits=None) -> str:
         return ""
 
 
+def format_thousands(n) -> str:
+    return f"{round(n/10**3):,}K"
+
+
 def format_dollars(dollars):
     return f"${round(dollars):,}"
 
 
-def format_millions(dollars):
+def format_million_dollars(dollars):
     return f"${round(dollars/10**6):,}M"
 
 
