@@ -6,3 +6,4 @@ jupyter
 jupyter_black
 jupyterlab_rise
 nbconvert[webpdf]
+wordcloud
