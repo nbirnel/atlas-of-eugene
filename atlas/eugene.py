@@ -983,6 +983,7 @@ def explore(
         legend_kwds={"caption": caption},
         tooltip=tooltip,
         zoom_start=12,
+        **kwargs,
     )
 
     if title:
