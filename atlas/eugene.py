@@ -56,6 +56,7 @@ acres_per_sq_meter = 0.000247105
 def single_median(series):
     return series.mode().loc[0]
 
+
 def str_as_float(string):
     if string == "":
         return float(0)
@@ -163,10 +164,8 @@ def modify_aggregate_columns(df, asint=("Year Built",)):
 def get_wards():
     gdf = gpd.read_file("data/city-of-eugene/Eugene_Wards_-_HUB.geojson")
     gdf.geometry = gdf.geometry.apply(make_valid)
-    gdf["ward_number"] = gdf.ward_number.astype('category')
-    return gdf.rename(
-        columns={"councilor": "Councilor"}
-    )
+    gdf["ward_number"] = gdf.ward_number.astype("category")
+    return gdf.rename(columns={"councilor": "Councilor"})
 
 
 def get_ward(geom):
@@ -225,7 +224,6 @@ def get_city_gdf():
     return gpd.read_file(
         "data/city-of-eugene/Eugene_City_Limits_-_HUB.geojson"
     ).to_crs("EPSG:4269")
-
 
 
 def get_city_limits():
