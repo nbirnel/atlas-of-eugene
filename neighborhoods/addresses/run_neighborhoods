@@ -1,0 +1,8 @@
+#!/bin/bash
+
+
+. venv/bin/activate
+
+while IFS= read -r line; do
+    ./get-neighborhood-addresses.py "$line"
+done < neighborhoods.csv
