@@ -972,13 +972,14 @@ def explore(
     Accept geopandas, kwargs.
     """
 
-    legend_kwds = kwargs.get("legend_kwds", {}).update({"caption": caption})
+    legend_kwds = kwargs.pop("legend_kwds", {})
+    legend_kwds.update({"caption": caption})
     m = gdf.explore(
         cmap=cmap,
         tiles="cartodb positron",
         legend=legend,
         column=column,
-        legend_kwds={"caption": caption},
+        legend_kwds=legend_kwds,
         tooltip=tooltip,
         zoom_start=12,
         **kwargs,
