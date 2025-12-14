@@ -966,6 +966,7 @@ def explore(
     title=None,
     legend=False,
     cmap="YlOrRd",
+    zoom_start=12,
     **kwargs,
 ) -> folium.folium.Map:
     """
@@ -974,14 +975,16 @@ def explore(
 
     legend_kwds = kwargs.pop("legend_kwds", {})
     legend_kwds.update({"caption": caption})
+    map_kwds = kwargs.pop("map_kwds", {})
     m = gdf.explore(
         cmap=cmap,
         tiles="cartodb positron",
         legend=legend,
         column=column,
         legend_kwds=legend_kwds,
+        map_kwds=map_kwds,
         tooltip=tooltip,
-        zoom_start=12,
+        zoom_start=zoom_start,
         **kwargs,
     )
 
