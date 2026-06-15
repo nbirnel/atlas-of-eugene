@@ -11,3 +11,4 @@ nbconvert[webpdf]
 openpyxl
 wordcloud
 xlrd
+mistune<3.1.0
